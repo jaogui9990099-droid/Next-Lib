@@ -1,7 +1,7 @@
 # NextLib
 
 NextLib is an Android ARM64 listener for My Singing Monsters SFS2X responses. It hooks `libmonsters.so`, logs useful SmartFox traffic, and saves decoded payloads as JSON files for debugging server compatibility.
-Made by Nextstars
+
 ## Files
 
 - `NextLib.c` - cleaned source code.
@@ -70,10 +70,11 @@ Use Android NDK Clang for ARM64:
 aarch64-linux-android21-clang -shared -fPIC -O2 -Wl,-soname,libNextLib.so -llog -o libNextLib.so NextLib.c
 ```
 
-The included prebuilt `libNextLib.so` is already ARM64. Its internal SONAME may still show the old name, but the file name and exported install symbol are `libNextLib.so` and `nextlib_logger_install`.
+The included prebuilt `libNextLib.so` is already ARM64. Its internal SONAME may still show the old name if it was produced from a patched binary, but the file name and exported install symbol are `libNextLib.so` and `nextlib_logger_install`.
 
 ## Notes
 
 - This is a debugging listener, not a gameplay mod.
 - Offsets are tied to the current supported `libmonsters.so` build.
 - If the game updates, offsets may need to be refreshed.
+- Do not publish private account captures or personal data.
